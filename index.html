@@ -1,492 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Activation Earth – Official Series Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Activation Earth | Official Trilogy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Basic SEO -->
-  <meta name="description" content="Activation Earth – a science fiction trilogy about hidden systems, human agency, and what happens when a planet is forced to confront the Great Filter.">
+<meta name="description" content="Activation Earth — A science fiction trilogy about planetary activation, Angel traversal, Helios Gate discipline, and humanity confronting the Great Filter.">
 
-  <style>
-    :root {
-      --bg: #04060e;
-      --bg-alt: #0b1020;
-      --accent: #f2c453;
-      --accent-soft: #f7e3aa;
-      --text: #f4f4f4;
-      --muted: #a4acc5;
-      --card: #111628;
-      --border: rgba(255, 255, 255, 0.06);
-    }
+<style>
+:root {
+  --bg: #05070d;
+  --panel: #0e1324;
+  --panel2: #141a33;
+  --accent: #e7c35a;
+  --text: #f2f2f2;
+  --muted: #9da7c7;
+  --border: rgba(255,255,255,0.06);
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* { box-sizing: border-box; margin:0; padding:0; }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      background-image:
-        radial-gradient(circle at top, #1b2345 0%, #050814 52%, #020309 100%),
-        url("ae-bg.jpg");
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: center top;
-    }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1b2245 0%, #05070d 55%, #020308 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    a {
-      color: var(--accent-soft);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+header {
+  background: rgba(5,7,15,0.96);
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  text-align: center;
+}
 
-    header {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(3, 6, 20, 0.94);
-    }
+header h1 {
+  letter-spacing: 4px;
+  font-size: 28px;
+}
 
-    .nav-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+nav {
+  margin-top: 10px;
+}
 
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-    }
+nav a {
+  color: var(--muted);
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.85rem;
-    }
+nav a:hover { color: var(--accent); }
 
-    nav a {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
+.hero {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
 
-    nav a:hover {
-      color: var(--accent-soft);
-    }
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
 
-    .hero {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 3.5rem 1.25rem 2.5rem;
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
+.hero p {
+  color: var(--muted);
+  max-width: 720px;
+  margin: auto;
+}
 
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 2.5rem;
-      }
-    }
+.section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
 
-    .hero-kicker {
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      letter-spacing: 0.25em;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
+.section h3 {
+  margin-bottom: 30px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 14px;
+}
 
-    .hero-title {
-      font-size: clamp(2.1rem, 4vw, 2.8rem);
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
 
-    .hero-title span {
-      color: var(--accent);
-    }
+.book {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
 
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--muted);
-      max-width: 34rem;
-      margin-bottom: 1.5rem;
-    }
+.book img {
+  width: 100%;
+  display: block;
+}
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
+.book-content {
+  padding: 20px;
+}
 
-    .btn {
-      border-radius: 999px;
-      padding: 0.7rem 1.6rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
+.book-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-    .btn-primary {
-      background: linear-gradient(135deg, #f7e3aa, #f2c453);
-      color: #1f1400;
-      border: none;
-    }
+.book-content p {
+  color: var(--muted);
+  font-size: 14px;
+}
 
-    .btn-primary:hover {
-      filter: brightness(1.04);
-    }
-
-    .btn-ghost {
-      background: rgba(3, 7, 21, 0.85);
-      color: var(--accent-soft);
-    }
-
-    .hero-meta {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-    }
-
-    .hero-meta span {
-      color: var(--accent-soft);
-    }
-
-    .hero-panel {
-      background: radial-gradient(circle at top left, #252c52 0%, #101528 55%, #080a16 100%);
-      border-radius: 1.25rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.85);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-panel-heading {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-panel-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-panel-body {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .badge {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(4, 7, 20, 0.9);
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent-soft);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .main {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.25rem 3rem;
-    }
-
-    section {
-      margin-bottom: 2.75rem;
-    }
-
-    h2.section-title {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent-soft);
-      margin-bottom: 1.2rem;
-    }
-
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 960px) {
-      .books-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .book-card {
-      background: var(--bg-alt);
-      border-radius: 1rem;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .book-cover-wrap {
-      background: radial-gradient(circle at top, #262f55 0%, #050814 70%);
-      padding: 0.9rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .book-cover {
-      max-width: 100%;
-      border-radius: 0.55rem;
-      display: block;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
-    }
-
-    .book-body {
-      padding: 1rem 1rem 1.2rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .book-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .book-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: var(--text);
-    }
-
-    .reading-order {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 40rem;
-    }
-
-    .reading-order ol {
-      margin-top: 0.5rem;
-      padding-left: 1.1rem;
-    }
-
-    .reading-order li {
-      margin-bottom: 0.35rem;
-    }
-
-    .about-text {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 40rem;
-    }
-
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 1.3rem 1.25rem 2rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: center;
-      background: rgba(3, 6, 18, 0.98);
-    }
-  </style>
+footer {
+  margin-top: 80px;
+  padding: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <div class="nav-inner">
-    <div class="logo">ACTIVATION EARTH</div>
-    <nav>
-      <ul>
-        <li><a href="#series">Series</a></li>
-        <li><a href="#order">Reading Order</a></li>
-        <li><a href="#about">About the Author</a></li>
-      </ul>
-    </nav>
-  </div>
+  <h1>ACTIVATION EARTH</h1>
+  <nav>
+    <a href="#series">Series</a>
+    <a href="#canon">Canon</a>
+    <a href="#about">About</a>
+  </nav>
 </header>
 
-<main>
-  <section class="hero">
-    <div>
-      <div class="hero-kicker">Science Fiction Trilogy</div>
-      <h1 class="hero-title">
-        Activation isn’t a single moment. <span>It’s a system coming online.</span>
-      </h1>
-      <p class="hero-subtitle">
-        <strong>Activation Earth</strong> follows the people caught between planetary-scale
-        decisions and the very small, very human lives those decisions run through.
-        Hidden infrastructure, non-human intelligences, and a looming Great Filter—
-        all colliding with families, workers, and the quiet machinery of everyday life.
-      </p>
+<section class="hero">
+  <h2>Activation is a process. The gate is HELD.</h2>
+  <p>
+    Activation Earth follows humanity as it discovers it has been observed for tens of thousands of years.
+    Angels traverse Helios Gate. Humans do not.
+    Power ramps through disciplined infrastructure, not miracle shortcuts.
+    The question is not whether we are watched — but whether we are stable enough to step forward.
+  </p>
+</section>
 
-      <div class="hero-actions">
-        <!-- TODO: replace # with your real Book 1 Amazon link -->
-        <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
-          Start with Book One
-        </a>
-        <a class="btn btn-ghost" href="#series">
-          See all three books
-        </a>
+<section id="series" class="section">
+  <h3>The Trilogy</h3>
+
+  <div class="books">
+
+    <div class="book">
+      <img src="book1-cover.jpg" alt="Arrival 3I Atlas Cover">
+      <div class="book-content">
+        <div class="book-title">Book One — Arrival 3I: Atlas</div>
+        <p>
+          A public mission hides a deeper pattern. Signals do not align.
+          What looks like coincidence becomes architecture.
+          Humanity realizes Earth may not be operating alone.
+        </p>
       </div>
-
-      <p class="hero-meta">
-        <span>Arrival 3I: Atlas</span> · Angels of Earth · The Great Filter
-      </p>
     </div>
 
-    <aside class="hero-panel">
-      <div class="badge">Trilogy Overview</div>
-      <div class="hero-panel-heading">Premise</div>
-      <div class="hero-panel-title">Earth has been in the system longer than anyone was told.</div>
-      <p class="hero-panel-body">
-        From false narratives about small “one-off” missions to the quiet repurposing of
-        global infrastructure, Activation Earth explores what it means to live on a world
-        that isn’t actually at the center of its own story—and what resistance looks like
-        when the rules are being written off-planet.
-      </p>
-    </aside>
-  </section>
-
-  <div class="main">
-    <section id="series">
-      <h2 class="section-title">The Series</h2>
-
-      <div class="books-grid">
-        <article class="book-card">
-          <div class="book-cover-wrap">
-            <!-- Replace filename with your real cover image if different -->
-            <img src="book1-cover.jpg" alt="Arrival 3I: Atlas book cover" class="book-cover">
-          </div>
-          <div class="book-body">
-            <div class="book-label">Book One</div>
-            <h3 class="book-title">Arrival 3I: Atlas</h3>
-            <p>
-              The world thinks it’s watching another deep-space mission play out on screens.
-              A handful of people begin to see something else: telemetry that doesn’t add up,
-              decisions that don’t match the public story, and a pattern of “coincidences”
-              that all point to the same ugly truth—Earth has already been enrolled in
-              someone else’s project. Arrival 3I is the first fracture in the illusion that
-              humanity is in control of its own future.
-            </p>
-          </div>
-        </article>
-
-        <article class="book-card">
-          <div class="book-cover-wrap">
-            <img src="book2-cover.jpg" alt="Angels of Earth book cover" class="book-cover">
-          </div>
-          <div class="book-body">
-            <div class="book-label">Book Two</div>
-            <h3 class="book-title">Angels of Earth</h3>
-            <p>
-              The systems behind the activation start to show their operators—“angels”
-              whose job is maintenance, not mercy. As their work becomes visible, pressure
-              builds in every direction: between governments and corporations, between those
-              who want to serve the system and those who want to break it, and inside the
-              lives of people who are suddenly more valuable as assets than as human beings.
-              Angels of Earth pushes the lens wide enough to see the architecture behind
-              the events of Book One.
-            </p>
-          </div>
-        </article>
-
-        <article class="book-card">
-          <div class="book-cover-wrap">
-            <img src="book3-cover.jpg" alt="The Great Filter book cover" class="book-cover">
-          </div>
-          <div class="book-body">
-            <div class="book-label">Book Three</div>
-            <h3 class="book-title">The Great Filter</h3>
-            <p>
-              Every civilization hits something—a wall, a choice, a filter it cannot
-              easily pass. For Earth, activation wasn’t the end of the story; it was the
-              opening move. The Great Filter follows the long-tail consequences of letting
-              outside systems rewrite the rules of survival, and asks the only question
-              that really matters: if you finally understand the test you’re taking, is it
-              already too late to change your answers?
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="order">
-      <h2 class="section-title">Reading Order</h2>
-      <div class="reading-order">
+    <div class="book">
+      <img src="book2-cover.jpg" alt="Angels of Earth Cover">
+      <div class="book-content">
+        <div class="book-title">Book Two — Angels of Earth</div>
         <p>
-          The trilogy is designed to be read in order. Each book stands on its own plot,
-          but the impact lands when you follow the escalation:
+          Helios Gate is HELD, not opened.
+          Angels traverse. Humans remain planet-side.
+          Infrastructure expands under strict access discipline as a clean far-side system is surveyed and staged.
         </p>
-        <ol>
-          <li><strong>Arrival 3I: Atlas</strong> — The first crack in the official story and the reveal that activation has already begun.</li>
-          <li><strong>Angels of Earth</strong> — The operators and architecture behind activation step into view, along with the cost.</li>
-          <li><strong>The Great Filter</strong> — The long-term terms of the deal become clear, and Earth has to decide what kind of participant it wants to be.</li>
-        </ol>
       </div>
-    </section>
+    </div>
 
-    <section id="about">
-      <h2 class="section-title">About the Author</h2>
-      <p class="about-text">
-        Activation Earth is written from a working-class perspective by someone who has
-        spent years inside the real machinery of everyday life: trades, infrastructure,
-        rentals, and jobs where the systems above you are invisible but very real. The
-        trilogy is less about shiny technology and more about what happens when vast,
-        hidden architectures finally become impossible to ignore—and what ordinary people
-        are willing to risk when they realize they’ve been inside a test the whole time.
-      </p>
-    </section>
+    <div class="book">
+      <img src="book3-cover.jpg" alt="The Great Filter Cover">
+      <div class="book-content">
+        <div class="book-title">Book Three — The Great Filter</div>
+        <p>
+          Dyson-like petals assemble in the Goldilocks band.
+          Power returns through staged relays, splitting at Earth between bridge baseline and planetary receivers.
+          Contact is attempted. The observers respond.
+          The gate closes.
+          A data dump remains — not a gift, but a stability manual.
+          The test is long-term discipline.
+        </p>
+      </div>
+    </div>
+
   </div>
-</main>
+</section>
+
+<section id="canon" class="section">
+  <h3>Core Canon</h3>
+  <p style="color: var(--muted); max-width: 800px;">
+    The galaxy seeds life naturally. The observers are not human and not seeders.
+    They have monitored Earth for tens of thousands of years through micro-wormhole pinholes.
+    Guardians — human savants for long-horizon risk — manage HELD versus OPENED discipline under global audit.
+    Angels evolve into modular, self-powered, carbon-carbon units coordinating through shortwave Quantum Command.
+    Advancement is not speech. It is threshold, audit, exception control, and sustained stability.
+  </p>
+</section>
+
+<section id="about" class="section">
+  <h3>About</h3>
+  <p style="color: var(--muted); max-width: 800px;">
+    Activation Earth is a science fiction trilogy about scale, restraint, and civilization risk.
+    It examines how species fail at the stage before maturity — and what it would take to pass that filter.
+  </p>
+</section>
 
 <footer>
-  &copy; <span id="year"></span> Activation Earth. All rights reserved.
+  © <span id="year"></span> Activation Earth
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
