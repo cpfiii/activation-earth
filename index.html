@@ -1,132 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Activation Earth | Official Trilogy</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Activation Earth | Official Trilogy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Activation Earth — a science fiction trilogy about planetary activation, HELD versus OPENED gates, Angels, Guardians, and humanity confronting the Great Filter.">
 
-<meta name="description" content="Activation Earth — A science fiction trilogy about planetary activation, Angel traversal, Helios Gate discipline, and humanity confronting the Great Filter.">
+  <style>
+    :root {
+      --bg: #03040a;
+      --panel: #0c1020;
+      --panel-soft: #141a33;
+      --accent: #f0cc5e;
+      --accent-soft: #f6e4a8;
+      --text: #f3f3f3;
+      --muted: #9ea7c8;
+      --border: rgba(255,255,255,0.06);
+    }
 
-<style>
-:root {
-  --bg: #05070d;
-  --panel: #0e1324;
-  --panel2: #141a33;
-  --accent: #e7c35a;
-  --text: #f2f2f2;
-  --muted: #9da7c7;
-  --border: rgba(255,255,255,0.06);
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-* { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, #252e64 0%, #050711 50%, #010208 100%),
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.08) 0, transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0, transparent 45%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #1b2245 0%, #05070d 55%, #020308 100%);
-  color: var(--text);
-  line-height: 1.6;
-}
+    header {
+      background: rgba(4, 6, 18, 0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+    }
 
-header {
-  background: rgba(5,7,15,0.96);
-  border-bottom: 1px solid var(--border);
-  padding: 20px;
-  text-align: center;
-}
+    header h1 {
+      letter-spacing: 4px;
+      font-size: 28px;
+    }
 
-header h1 {
-  letter-spacing: 4px;
-  font-size: 28px;
-}
+    nav {
+      margin-top: 10px;
+    }
 
-nav {
-  margin-top: 10px;
-}
+    nav a {
+      color: var(--muted);
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
 
-nav a {
-  color: var(--muted);
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
+    nav a:hover {
+      color: var(--accent);
+    }
 
-nav a:hover { color: var(--accent); }
+    .hero {
+      max-width: 1100px;
+      margin: 60px auto 50px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 32px;
+      align-items: center;
+    }
 
-.hero {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 20px;
-  text-align: center;
-}
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
 
-.hero h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
+    .hero-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
 
-.hero p {
-  color: var(--muted);
-  max-width: 720px;
-  margin: auto;
-}
+    .hero h2 {
+      font-size: clamp(26px, 4vw, 32px);
+      margin-bottom: 16px;
+    }
 
-.section {
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
+    .hero h2 span {
+      color: var(--accent);
+    }
 
-.section h3 {
-  margin-bottom: 30px;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 14px;
-}
+    .hero p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 34rem;
+    }
 
-.books {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
+    .hero-meta {
+      margin-top: 18px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
 
-.book {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-}
+    .hero-meta span {
+      color: var(--accent-soft);
+    }
 
-.book img {
-  width: 100%;
-  display: block;
-}
+    .hero-panel {
+      background: radial-gradient(circle at top, #262f61 0%, #090d1b 60%);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 18px 18px 20px;
+      box-shadow: 0 26px 60px rgba(0,0,0,0.85);
+      position: relative;
+    }
 
-.book-content {
-  padding: 20px;
-}
+    .hero-panel-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(4,6,18,0.92);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-soft);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
 
-.book-title {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+    .hero-panel-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
 
-.book-content p {
-  color: var(--muted);
-  font-size: 14px;
-}
+    .hero-panel-heading {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-footer {
-  margin-top: 80px;
-  padding: 30px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-}
-</style>
+    .hero-panel p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section h3 {
+      margin-bottom: 24px;
+      color: var(--accent-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 13px;
+    }
+
+    .books {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .book {
+      background: var(--panel);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-cover-wrap {
+      background: radial-gradient(circle at top, #242c58 0%, #050814 70%);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .book img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+      display: block;
+    }
+
+    .book-content {
+      padding: 16px 18px 20px;
+      font-size: 14px;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .book-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .book-title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .canon-text,
+    .about-text {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 780px;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: rgba(3,5,14,0.98);
+    }
+  </style>
 </head>
 
 <body>
@@ -141,13 +259,31 @@ footer {
 </header>
 
 <section class="hero">
-  <h2>Activation is a process. The gate is HELD.</h2>
-  <p>
-    Activation Earth follows humanity as it discovers it has been observed for tens of thousands of years.
-    Angels traverse Helios Gate. Humans do not.
-    Power ramps through disciplined infrastructure, not miracle shortcuts.
-    The question is not whether we are watched — but whether we are stable enough to step forward.
-  </p>
+  <div>
+    <div class="hero-kicker">Science Fiction Trilogy</div>
+    <h2>Activation isn’t a miracle. <span>It’s a held gate and a long test.</span></h2>
+    <p>
+      Across three books, <strong>Activation Earth</strong> follows a planet that discovers it has been
+      watched for tens of thousands of years. Angels traverse Helios Gate. Humans don’t.
+      Power ramps through disciplined infrastructure, not shortcuts. The observers don’t hand out trophies;
+      they watch for stability.
+    </p>
+    <div class="hero-meta">
+      <span>Arrival 3I: Atlas</span> · The Guardians · The Great Filter
+    </div>
+  </div>
+
+  <aside class="hero-panel">
+    <div class="hero-panel-badge">Trilogy Premise</div>
+    <div class="hero-panel-title">Observed. Tested. Not alone.</div>
+    <div class="hero-panel-heading">The galaxy seeds life. The observers sort outcomes.</div>
+    <p>
+      In this universe, panspermia is normal. Worlds grow life on their own.
+      The observers are something else entirely — millions of years old, not human, not seeders.
+      Their job is quiet: guide civilizations that reach a threshold and walk away from the ones that don’t.
+      Earth is just now realizing it’s on that list.
+    </p>
+  </aside>
 </section>
 
 <section id="series" class="section">
@@ -155,64 +291,88 @@ footer {
 
   <div class="books">
 
-    <div class="book">
-      <img src="book1-cover.jpg" alt="Arrival 3I Atlas Cover">
+    <article class="book">
+      <div class="book-cover-wrap">
+        <!-- Change the filename if your real cover name is different -->
+        <img src="book1-cover.jpg" alt="Arrival 3I: Atlas cover">
+      </div>
       <div class="book-content">
-        <div class="book-title">Book One — Arrival 3I: Atlas</div>
+        <div class="book-label">Book One</div>
+        <div class="book-title">Arrival 3I: Atlas</div>
         <p>
-          A public mission hides a deeper pattern. Signals do not align.
-          What looks like coincidence becomes architecture.
-          Humanity realizes Earth may not be operating alone.
+          Before there were satellites or screens, Earth was already humming — a deep, structured pressure moving
+          through stone and water. Most people never felt it. A few did.
+          When a high-profile mission called <em>Arrival 3I</em> takes the world’s attention,
+          a handful of people notice that the story they’re being shown doesn’t match
+          what the data and the ground beneath their feet are doing.
+          The illusion that humanity is fully in charge of its own planet starts to crack.
         </p>
       </div>
-    </div>
+    </article>
 
-    <div class="book">
-      <img src="book2-cover.jpg" alt="Angels of Earth Cover">
+    <article class="book">
+      <div class="book-cover-wrap">
+        <img src="book2-cover.jpg" alt="The Guardians cover">
+      </div>
       <div class="book-content">
-        <div class="book-title">Book Two — Angels of Earth</div>
+        <div class="book-label">Book Two</div>
+        <div class="book-title">The Guardians</div>
         <p>
-          Helios Gate is HELD, not opened.
-          Angels traverse. Humans remain planet-side.
-          Infrastructure expands under strict access discipline as a clean far-side system is surveyed and staged.
+          After the Lock, the hum doesn’t vanish — it settles into systems.
+          Helios Gate is HELD, not opened, and traversal is Angel-only.
+          While Angels move through to a clean far-side star system to survey, stage,
+          and start building infrastructure, a small human group is given a harder job:
+          watch the long horizon. The Guardians are chosen for 500-year thinking,
+          tasked by a world vote to manage access discipline, thresholds, and exceptions
+          while the rest of the planet keeps trying to live day to day.
         </p>
       </div>
-    </div>
+    </article>
 
-    <div class="book">
-      <img src="book3-cover.jpg" alt="The Great Filter Cover">
+    <article class="book">
+      <div class="book-cover-wrap">
+        <img src="book3-cover.jpg" alt="The Great Filter cover">
+      </div>
       <div class="book-content">
-        <div class="book-title">Book Three — The Great Filter</div>
+        <div class="book-label">Book Three</div>
+        <div class="book-title">The Great Filter</div>
         <p>
-          Dyson-like petals assemble in the Goldilocks band.
-          Power returns through staged relays, splitting at Earth between bridge baseline and planetary receivers.
-          Contact is attempted. The observers respond.
-          The gate closes.
-          A data dump remains — not a gift, but a stability manual.
-          The test is long-term discipline.
+          On the far side of Helios Gate, Angels assemble Dyson-like solar petals in the star’s
+          Goldilocks band — close enough for power, far enough to survive.
+          Energy flows back through staged relay waystations, then splits near Earth:
+          bridge share to keep the ER bridge stable, Earth share into receiver fields and planetary “batteries.”
+          With sustained power and a held gate, humanity authorizes one attempt to reach the observers.
+          The answer is not a parade. They send us back, close the gate, keep a fleet of Angels and our three ships,
+          and leave behind a dense data dump: a stability manual that maps how species fail at this stage
+          and what it would take not to.
         </p>
       </div>
-    </div>
+    </article>
 
   </div>
 </section>
 
 <section id="canon" class="section">
   <h3>Core Canon</h3>
-  <p style="color: var(--muted); max-width: 800px;">
-    The galaxy seeds life naturally. The observers are not human and not seeders.
-    They have monitored Earth for tens of thousands of years through micro-wormhole pinholes.
-    Guardians — human savants for long-horizon risk — manage HELD versus OPENED discipline under global audit.
-    Angels evolve into modular, self-powered, carbon-carbon units coordinating through shortwave Quantum Command.
-    Advancement is not speech. It is threshold, audit, exception control, and sustained stability.
+  <p class="canon-text">
+    In Activation Earth, the galaxy seeds life, but the observers are not seeders and not gods.
+    They have watched Earth through micro-wormhole pinholes for tens of thousands of years.
+    Angels evolve into modular, carbon-carbon bodies with aerogel skin, each segment self-powered by light.
+    There are no wires inside them — coordination happens through short-range Quantum Command:
+    intent broadcast, local execution.
+    Guardians are human, secular, and audited. Their job is not to preach but to keep the gate HELD
+    until we’re ready to open it without burning ourselves down.
   </p>
 </section>
 
 <section id="about" class="section">
   <h3>About</h3>
-  <p style="color: var(--muted); max-width: 800px;">
-    Activation Earth is a science fiction trilogy about scale, restraint, and civilization risk.
-    It examines how species fail at the stage before maturity — and what it would take to pass that filter.
+  <p class="about-text">
+    Activation Earth is written from a working perspective — jobs, families, infrastructure, and the quiet pressure
+    of systems most people never get to see. The trilogy isn’t about instant transcendence or chosen ones.
+    It’s about what happens when a very ordinary, very flawed species is told:
+    you’re not alone, you’re not early, and you’re not exempt from the math.
+    Improvement in this universe isn’t a speech — it’s discipline, over time.
   </p>
 </section>
 
@@ -221,7 +381,7 @@ footer {
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
